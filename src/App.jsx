@@ -1,33 +1,38 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import Introduction from './components/Introduction'
+import NuclearChainReaction from './components/NuclearReact'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      {/* Side bar  */}
+      {/* <div className="header border-2 text-4xl border-black text-center">
+        Navbar.
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <section id="content" className='grid grid-cols-9'>
+        
+          <div id="sideBar" className='col-span-2 utilWireframe'>
+             Pages Navigation
+          </div>
+
+          <div className='col-span-5 border-2  border-black'>
+            <Introduction />
+          </div>
+
+          <div id="Pages" className='col-span-2 utilWireframe'>
+            Inside this page content.
+          </div>
+      </section> */}
+
+
+
+      <NuclearChainReaction />
+
+
     </>
   )
 }
