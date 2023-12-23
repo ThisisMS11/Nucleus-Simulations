@@ -18,7 +18,7 @@ const Neutron = ({ x, y, angle, isMoving, atomsCoordinates, onCollision }) => {
     const checkForCollision = (currentX, currentY, angle) => {
         atomsCoordinates.forEach((atom, index) => {
             const atomX = 180 + (atom.position.x % 650);
-            const atomY = atom.position.y % 300;
+            const atomY = atom.position.y % 290;
             const distance = Math.sqrt((atomX - currentX) ** 2 + (atomY - currentY) ** 2);
 
             // Collision threshold to determine if a collision occurred

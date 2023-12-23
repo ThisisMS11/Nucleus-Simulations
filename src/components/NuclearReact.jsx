@@ -12,11 +12,34 @@ import { MusicOff } from '@mui/icons-material';
 const Atom = ({ position }) => (
     <img
         className="random-image"
-        style={{ left: `${180 + position.x % 650}px`, top: `${position.y % 300}px` }}
+        style={{ left: `${180 + position.x % 650}px`, top: `${position.y % 290}px` }}
         src={AtomImage}
         alt="Atom"
     />
 );
+
+
+const Shockwave = ({ position }) => {
+    const [radius, setRadius] = useState(0);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            if (radius + 1 > 500) {
+                clearInterval(intervalId);
+            } else {
+                setRadius((prevRadius) => prevRadius + 1);
+            }
+        }, 10);
+
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, [radius]);
+
+    return <div className="shockwave" style={{ left: `${position.x}px`, top: `${position.y}px`, width: `${radius}px`, height: `${radius}px` }} />;
+};
+
+
 
 const NuclearChainReaction = () => {
     const [atomsCoordinates, setAtomsCoordinates] = useState([]);
@@ -24,6 +47,8 @@ const NuclearChainReaction = () => {
     const [isMoving, setIsMoving] = useState(false);
     const [neutrons, setNeutrons] = useState([]);
     const [energyWaves, setEnergyWaves] = useState([]);
+
+    const [shockwaves, setShockwaves] = useState([]);
     const [playmusic, setPlaymusic] = useState(true);
     // Ref for the blast sound audio
     const audioRef = useRef(new Audio(ExplosionSound));
@@ -35,8 +60,8 @@ const NuclearChainReaction = () => {
 
     // Generate a random position within the cylinder
     const getRandomPosition = () => ({
-        x: Math.random() * 600,
-        y: Math.random() * 600,
+        x: Math.random() * 550,
+        y: Math.random() * 540,
     });
 
     // Create random atom positions based on the given count
@@ -52,7 +77,7 @@ const NuclearChainReaction = () => {
         // Get collided atom's position
         const collidedAt = atomsCoordinates[index].position;
         const atomX = 180 + (collidedAt.x % 650);
-        const atomY = collidedAt.y % 300;
+        const atomY = collidedAt.y % 290;
 
         // Create new neutrons
         const newNeutrons = [
@@ -66,11 +91,11 @@ const NuclearChainReaction = () => {
         // Create new energy waves
         const newEnergyWaves = [
             { x: atomX, y: atomY, angle: angle + 45 },
-            { x: atomX, y: atomY, angle: angle - 45 },
         ];
 
         // Set new energy waves
         setEnergyWaves((prevWaves) => [...prevWaves, ...newEnergyWaves]);
+        setShockwaves([...shockwaves, { x: atomX, y: atomY }]);
 
         // Remove the collided atom
         setAtomsCoordinates((prevAtoms) =>
@@ -105,12 +130,12 @@ const NuclearChainReaction = () => {
             {/* Audio element for blast sound */}
             <audio src={ExplosionSound} ref={audioRef} />
             <div className="w-3/4 h-2/3 flex">
-                <div id="cylinder" className="w-3/4 flex justify-end items-center h-full">
+                <div id="cylinder" className=" w-3/4 flex justify-end items-center h-full">
                     <div
                         id="mainCylinder"
-                        className="flex justify-center items-center w-full h-4/5 rounded-full bg-gray-400 overflow-hidden"
+                        className=" flex  justify-center items-center w-full h-4/5 rounded-full bg-gray-700 overflow-hidden"
                     >
-                        <div className="w-[90%] h-[80%] relative ">
+                        <div className=" z-10 bg-gray-400 rounded-full w-[90%] h-[80%] relative ">
                             {/* Neutron component for initial neutron */}
                             <Neutron
                                 x={45}
@@ -134,9 +159,14 @@ const NuclearChainReaction = () => {
                                     />
                                 ))}
                             {/* Render existing energy waves */}
-                            {energyWaves.map((wave, index) => (
+                            {/* {energyWaves.map((wave, index) => (
                                 <EnergyWave key={index} position={wave} />
+                            ))} */}
+
+                            {shockwaves.map((wave, index) => (
+                                <Shockwave key={index} position={wave} />
                             ))}
+
                             {/* Render existing atoms */}
                             {atomsCoordinates.map((atom, index) => (
                                 <Atom key={index} position={atom.position} />
@@ -146,7 +176,7 @@ const NuclearChainReaction = () => {
                 </div>
                 <div className="grid grid-flow-col grid-rows-3 w-1/4">
                     <div className="bg-gray-400 w-4/5 -skew-x-[12deg]" id="flap1"></div>
-                    <div className="bg-gray-400 w-4/5 -translate-x-4" id="flap2"></div>
+                    <div className="bg-gray-600 w-4/5 -translate-x-4 " id="flap2"></div>
                     <div className="bg-gray-400 w-4/5 skew-x-[12deg]" id="flap3"></div>
                 </div>
             </div>
