@@ -1,0 +1,178 @@
+[
+    {
+        "questiontext": "Consider four processes P, Q, R and S scheduled on a CPU as per round robin algorithm with a time quantum of 4 units. The processes arrive in the order P, Q, R, S, all at time t = 0. There is exactly one context switch from S to Q, exactly one context switch from R to Q, and exactly two context switches from Q to R. There is no context switch from S to P. \n *Switching* to a ready process after the termination of another process is also considered a context switch. Which one of the following is NOT possible as CPU burst time (in time units) of these processes?",
+        "options": [
+            "option1",
+            "option2",
+            "option3",
+            "option4"
+        ],
+        "correctOption": "option1",
+        "explanation": "The above grant chart satisfies all \nconditions giv…(c) but not option (d).\nSo, answer is option (d)."
+    },
+    {
+        "questiontext": "What is the capital of France?",
+        "options": [
+            "Paris",
+            "Berlin",
+            "Madrid",
+            "Rome"
+        ],
+        "correctOption": "Paris",
+        "explanation": "Paris is the capital of France."
+    },
+    {
+        "questiontext": "Who wrote the play 'Romeo and Juliet'?",
+        "options": [
+            "William Shakespeare",
+            "Jane Austen",
+            "Charles Dickens",
+            "Leo Tolstoy"
+        ],
+        "correctOption": "William Shakespeare",
+        "explanation": "William Shakespeare is the author of 'Romeo and Juliet.'"
+    },
+    {
+        "questiontext": "What is the square root of 25?",
+        "options": [
+            "3",
+            "5",
+            "7",
+            "10"
+        ],
+        "correctOption": "5",
+        "explanation": "The square root of 25 is 5."
+    },
+    {
+        "questiontext": "In which year did World War II end?",
+        "options": [
+            "1943",
+            "1945",
+            "1950",
+            "1939"
+        ],
+        "correctOption": "1945",
+        "explanation": "World War II ended in the year 1945."
+    },
+    {
+        "questiontext": "What is the largest planet in our solar system?",
+        "options": [
+            "Earth",
+            "Mars",
+            "Jupiter",
+            "Venus"
+        ],
+        "correctOption": "Jupiter",
+        "explanation": "Jupiter is the largest planet in our solar system."
+    },
+    {
+        "questiontext": "Who is known as the 'Father of Computer Science'?",
+        "options": [
+            "Alan Turing",
+            "Bill Gates",
+            "Steve Jobs",
+            "Mark Zuckerberg"
+        ],
+        "correctOption": "Alan Turing",
+        "explanation": "Alan Turing is considered the 'Father of Computer Science.'"
+    },
+    {
+        "questiontext": "What is the main purpose of HTML?",
+        "options": [
+            "Styling web pages",
+            "Creating databases",
+            "Defining webpage structure",
+            "Managing server-side logic"
+        ],
+        "correctOption": "Defining webpage structure",
+        "explanation": "HTML is used for defining the structure of a webpage."
+    },
+    {
+        "questiontext": "Which programming language is often used for machine learning?",
+        "options": [
+            "Java",
+            "Python",
+            "C++",
+            "Ruby"
+        ],
+        "correctOption": "Python",
+        "explanation": "Python is commonly used for machine learning."
+    },
+    {
+        "questiontext": "What does CSS stand for?",
+        "options": [
+            "Computer Style Sheets",
+            "Creative Style Sheets",
+            "Cascading Style Sheets",
+            "Colorful Style Sheets"
+        ],
+        "correctOption": "Cascading Style Sheets",
+        "explanation": "CSS stands for Cascading Style Sheets."
+    },
+    {
+        "questiontext": "Who is the current Prime Minister of India?",
+        "options": [
+            "Narendra Modi",
+            "Rahul Gandhi",
+            "Amit Shah",
+            "Arvind Kejriwal"
+        ],
+        "correctOption": "Narendra Modi",
+        "explanation": "Narendra Modi is the current Prime Minister of India."
+    },
+    {
+        "questiontext": "What is the chemical symbol for gold?",
+        "options": [
+            "Gd",
+            "Ge",
+            "Au",
+            "Ag"
+        ],
+        "correctOption": "Au",
+        "explanation": "The chemical symbol for gold is Au."
+    },
+    {
+        "questiontext": "Who developed the theory of relativity?",
+        "options": [
+            "Isaac Newton",
+            "Galileo Galilei",
+            "Albert Einstein",
+            "Stephen Hawking"
+        ],
+        "correctOption": "Albert Einstein",
+        "explanation": "Albert Einstein developed the theory of relativity."
+    },
+    {
+        "questiontext": "Which is the longest river in the world?",
+        "options": [
+            "Nile",
+            "Amazon",
+            "Yangtze",
+            "Mississippi"
+        ],
+        "correctOption": "Nile",
+        "explanation": "The Nile is the longest river in the world."
+    },
+    {
+        "questiontext": "What is the powerhouse of the cell?",
+        "options": [
+            "Mitochondria",
+            "Nucleus",
+            "Endoplasmic Reticulum",
+            "Golgi Apparatus"
+        ],
+        "correctOption": "Mitochondria",
+        "explanation": "Mitochondria is the powerhouse of the cell."
+    },
+    {
+        "questiontext": "Who painted the Mona Lisa?",
+        "options": [
+            "Vincent van Gogh",
+            "Leonardo da Vinci",
+            "Pablo Picasso",
+            "Claude Monet"
+        ],
+        "correctOption": "Leonardo da Vinci",
+        "explanation": "The Mona Lisa was painted by Leonardo da Vinci."
+    }
+]
